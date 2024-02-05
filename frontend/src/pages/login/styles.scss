@@ -1,0 +1,116 @@
+@import "../../sass/variables";
+
+.login-page-container {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.login-banner-section {
+  display: none;
+  flex: 1;
+
+  @media (min-width: $md) {
+    display: block;
+  }
+
+  figure {
+    margin: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    figcaption {
+      position: absolute;
+      inset: 0;
+      background-color: $primary-main;
+      opacity: 0.1;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.login-form-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: $space-8;
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: $space-4;
+
+  @media (min-width: 768px) {
+    width: 100%;
+    max-width: 500px;
+    padding: $space-8;
+  }
+
+  @media (min-width: 1024px) {
+    width: 100%;
+    padding: $space-12;
+    max-width: 700px;
+  }
+}
+
+.login-form-article {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: $space-8;
+
+  @media (min-width: $md) {
+    flex-direction: column;
+  }
+}
+
+.login-logo-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 100%;
+
+  @media (min-width: $md) {
+    display: block;
+  }
+}
+
+.login-form-place-items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  h2 {
+    font-size: $space-6;
+    font-weight: $semibold;
+    margin-bottom: $space-4;
+  }
+
+  .sign-in {
+    font-weight: bold;
+    font-size: $sm;
+    color: $primary-main;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.login-page-footer-container {
+  display: flex;
+  align-items: end;
+  flex: 1;
+}

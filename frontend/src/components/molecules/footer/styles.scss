@@ -1,0 +1,39 @@
+@import "../../../sass/variables";
+
+.footer-container {
+  display: flex;
+  gap: $space-4;
+  justify-content: center;
+  width: 100%;
+  align-items: flex-end;
+
+  @media (min-width: $md) {
+    justify-content: space-between;
+  }
+
+  span {
+    font-size: $xs;
+
+    @media (min-width: $md) {
+      font-size: $sm;
+    }
+  }
+
+  div {
+    display: none;
+    span {
+      font-size: $sm;
+    }
+    @media (min-width: $md) {
+      display: block;
+    }
+    a {
+      font-weight: bold;
+      font-size: $sm;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

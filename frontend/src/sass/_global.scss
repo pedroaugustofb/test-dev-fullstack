@@ -1,0 +1,37 @@
+@import "./variables";
+
+* {
+  font-family: "SF Pro Display", "Roboto", "system-ui", "-apple-system";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+body {
+  background-color: rgb(252, 252, 252);
+}
+
+button {
+  font-family: "SF Pro Display", "Roboto", "system-ui", "-apple-system";
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "SF Pro Display", "Roboto", "system-ui", "-apple-system";
+  margin: 0;
+  padding: 0;
+}

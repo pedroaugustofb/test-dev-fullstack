@@ -1,0 +1,30 @@
+@import "../../../sass/variables";
+
+.center-container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.loader-text-box {
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    font-size: $md;
+    color: $black-dark;
+    font-weight: $semibold;
+  }
+
+  p {
+    font-size: $sm;
+    color: $black-main;
+  }
+}

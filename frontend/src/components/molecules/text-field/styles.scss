@@ -1,0 +1,63 @@
+@import "../../../sass/variables";
+
+.text-field-container {
+  display: flex;
+  flex-direction: column;
+  column-gap: $space-2;
+  row-gap: $space-1;
+  width: 100%;
+
+  label {
+    font-size: $sm;
+    font-weight: $semibold;
+    padding: $space-x-3;
+  }
+}
+
+.input-field-container {
+  position: relative;
+  width: 100%;
+  input {
+    border: 1px solid $black-dark;
+    border-radius: $space-1;
+    width: 100%;
+    padding: $space-3 $space-3;
+    font-size: $sm;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px $primary-main;
+      border-color: transparent;
+    }
+  }
+
+  .icon {
+    color: $primary-main;
+    height: 21px;
+    width: 21px;
+  }
+
+  .error-message-container {
+    font-size: $sm;
+    color: $primary-main;
+    padding-top: $space-1;
+    padding-left: $space-3;
+    padding-right: $space-3;
+    display: flex;
+    align-items: center;
+    gap: $space-1;
+  }
+
+  .password-toggle {
+    position: absolute;
+    top: $space-3;
+    right: $space-3;
+    color: $primary-main;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
