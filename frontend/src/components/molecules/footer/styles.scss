@@ -12,7 +12,7 @@
   }
 
   span {
-    font-size: $xs;
+    font-size: $text-xs;
 
     @media (min-width: $md) {
       font-size: $sm;

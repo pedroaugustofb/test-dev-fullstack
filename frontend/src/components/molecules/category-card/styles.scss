@@ -1,0 +1,22 @@
+@import "../../../sass/variables";
+
+.category-card-container {
+  width: fit-content;
+  display: flex;
+  padding: $space-2 $space-4;
+  border-radius: 7px;
+  justify-content: center;
+  border: 1px solid $white-dark;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: $black-main;
+    color: $white-light;
+    transform: scale(1.05);
+  }
+
+  span {
+    font-weight: $semibold;
+  }
+}

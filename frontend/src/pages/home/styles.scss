@@ -1,1 +1,20 @@
 @import "../../sass/variables";
+
+.categories-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-4;
+
+  @media (max-width: 1360px) {
+    padding: $space-4;
+  }
+}
+
+.caregories-container {
+  display: grid;
+  gap: $space-4;
+
+  label {
+    font-weight: $semibold;
+  }
+}

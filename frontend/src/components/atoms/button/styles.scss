@@ -30,7 +30,7 @@
 .secondary {
   @extend %button-styles;
   background-color: $black-main;
-  color: $black-main;
+  color: $white-light;
 
   &:hover {
     background-color: $black-dark;
