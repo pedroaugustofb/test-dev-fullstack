@@ -52,7 +52,7 @@ export default class AuthMiddleware implements NestMiddleware {
       const { id } = decoded as { id: string };
 
       const user = this.usersRepository.findOne({
-        _id: id,
+        id,
       });
 
       if (!user) {

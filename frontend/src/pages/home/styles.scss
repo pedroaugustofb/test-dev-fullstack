@@ -24,6 +24,11 @@
     align-items: center;
     gap: $space-4;
   }
+
+  p {
+    font-size: $text-sm;
+    color: $black-light;
+  }
 }
 
 .label-icon {

@@ -37,9 +37,12 @@ export default function HomePage() {
   return (
     <PageLimits>
       <section className="caregories-container">
-        <label>
-          Categorias <SquareStack className="icon" />
-        </label>
+        <div>
+          <label>
+            Categories <SquareStack className="icon" />
+          </label>
+          <p>Click to filter by category</p>
+        </div>
         <div className="categories-grid">
           {categories.map((category: Category) => (
             <CategoryCard key={category.id} category={category} />
@@ -50,7 +53,7 @@ export default function HomePage() {
       <Divider />
       <section className="caregories-container">
         <label>
-          Produtos <Box className="icon" />
+          Products <Box className="icon" />
         </label>
 
         <TextField placeholder="What are tou looking for?" id="searchBy" type="text" label="Search" onChange={(e) => setSearchBy(e.target.value)}>

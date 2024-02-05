@@ -11,6 +11,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './modules/users/users.module';
 import AuthMiddleware from './modules/auth/auth.middleware';
 import { AuthModule } from './modules/auth/auth.module';
+import { CategoriesModule } from './modules/categories/categories.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { AuthModule } from './modules/auth/auth.module';
     }),
     AuthModule,
     UsersModule,
+    CategoriesModule,
   ],
   controllers: [],
   providers: [{ provide: APP_INTERCEPTOR, useClass: ErrorsInterceptor }],
