@@ -12,9 +12,9 @@ import Divider from "../../components/atoms/divider";
 import { SquareStack, Box, Search } from "lucide-react";
 import { useState } from "react";
 import TextField from "../../components/molecules/text-field";
+import ProductCard from "../../components/molecules/product-card";
 
 export default function HomePage() {
-  // http://localhost:3000/?category=1
   const [searchParams] = useSearchParams();
   const category = searchParams.get("category") || "";
   const categoryData = useFetchCategories();
@@ -29,8 +29,7 @@ export default function HomePage() {
   const { categories } = categoryData;
   const { products } = productsData;
 
-  console.log(products, categories, searchBy);
-
+  // todo: retirar esse mock
   products.push(products[0], products[0], products[0], products[0], products[0]);
 
   const filteredProducts = products.filter((product) => product.name.trim().toLowerCase().includes(searchBy.trim().toLowerCase()));
@@ -54,16 +53,16 @@ export default function HomePage() {
           Produtos <Box className="icon" />
         </label>
 
-        <TextField placeholder="What are tou looking for" id="searchBy" type="text" label="Search" onChange={(e) => setSearchBy(e.target.value)}>
+        <TextField placeholder="What are tou looking for?" id="searchBy" type="text" label="Search" onChange={(e) => setSearchBy(e.target.value)}>
           <Search className="label-icon" />
         </TextField>
-      </section>
 
-      <div className="products-grid">
-        {filteredProducts.map((product) => (
-          <div className="test"> {product.name} </div>
-        ))}
-      </div>
+        <div className="products-grid">
+          {filteredProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      </section>
     </PageLimits>
   );
 }

@@ -38,15 +38,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: $space-4;
-  padding: $space-y-2;
+  padding: $space-y-4;
 
   @media (max-width: $sm) {
     padding: $space-y-2;
     grid-template-columns: 1fr;
   }
-}
-
-.test {
-  border: 1px solid red;
-  height: 100%;
 }
