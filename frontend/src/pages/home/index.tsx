@@ -8,6 +8,10 @@ import CategoryCard from "../../components/molecules/category-card";
 import useFetchProducts from "../../hooks/fetch/useFetchProducts";
 import Category from "../../entities/products/Category";
 import { useSearchParams } from "react-router-dom";
+import Divider from "../../components/atoms/divider";
+import { SquareStack, Box, Search } from "lucide-react";
+import { useState } from "react";
+import TextField from "../../components/molecules/text-field";
 
 export default function HomePage() {
   // http://localhost:3000/?category=1
@@ -16,6 +20,8 @@ export default function HomePage() {
   const categoryData = useFetchCategories();
   const productsData = useFetchProducts(category);
 
+  const [searchBy, setSearchBy] = useState("");
+
   if (categoryData.error || productsData.error) return <Error />;
 
   if (categoryData.loading || productsData.loading) return <Loader />;
@@ -23,18 +29,41 @@ export default function HomePage() {
   const { categories } = categoryData;
   const { products } = productsData;
 
-  console.log(products, categories);
+  console.log(products, categories, searchBy);
+
+  products.push(products[0], products[0], products[0], products[0], products[0]);
+
+  const filteredProducts = products.filter((product) => product.name.trim().toLowerCase().includes(searchBy.trim().toLowerCase()));
 
   return (
     <PageLimits>
       <section className="caregories-container">
-        <label className="categories-title">Categorias</label>
+        <label>
+          Categorias <SquareStack className="icon" />
+        </label>
         <div className="categories-grid">
           {categories.map((category: Category) => (
             <CategoryCard key={category.id} category={category} />
           ))}
         </div>
       </section>
+
+      <Divider />
+      <section className="caregories-container">
+        <label>
+          Produtos <Box className="icon" />
+        </label>
+
+        <TextField placeholder="What are tou looking for" id="searchBy" type="text" label="Search" onChange={(e) => setSearchBy(e.target.value)}>
+          <Search className="label-icon" />
+        </TextField>
+      </section>
+
+      <div className="products-grid">
+        {filteredProducts.map((product) => (
+          <div className="test"> {product.name} </div>
+        ))}
+      </div>
     </PageLimits>
   );
 }

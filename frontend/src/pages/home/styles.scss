@@ -5,8 +5,11 @@
   flex-wrap: wrap;
   gap: $space-4;
 
+  max-height: 200px;
+  overflow-y: auto;
+
   @media (max-width: 1360px) {
-    padding: $space-4;
+    padding: $space-y-2;
   }
 }
 
@@ -16,5 +19,34 @@
 
   label {
     font-weight: $semibold;
+    font-size: $text-lg;
+    display: flex;
+    align-items: center;
+    gap: $space-4;
   }
+}
+
+.label-icon {
+  width: 14px;
+  height: 14px;
+  color: $black-main;
+  font-size: $text-lg;
+  font-weight: $semibold;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: $space-4;
+  padding: $space-y-2;
+
+  @media (max-width: $sm) {
+    padding: $space-y-2;
+    grid-template-columns: 1fr;
+  }
+}
+
+.test {
+  border: 1px solid red;
+  height: 100%;
 }

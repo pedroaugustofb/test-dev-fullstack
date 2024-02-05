@@ -7,8 +7,8 @@
   row-gap: $space-1;
   width: 100%;
 
-  label {
-    font-size: $sm;
+  .label-text-field {
+    font-size: $text-sm;
     font-weight: $semibold;
     padding: $space-x-3;
   }
@@ -22,7 +22,7 @@
     border-radius: $space-1;
     width: 100%;
     padding: $space-3 $space-3;
-    font-size: $sm;
+    font-size: $text-sm;
 
     &:focus {
       outline: none;
@@ -38,7 +38,7 @@
   }
 
   .error-message-container {
-    font-size: $sm;
+    font-size: $text-sm;
     color: $primary-main;
     padding-top: $space-1;
     padding-left: $space-3;

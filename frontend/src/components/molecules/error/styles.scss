@@ -18,13 +18,13 @@
   flex-direction: column;
 
   h1 {
-    font-size: $md;
+    font-size: $text-md;
     color: $black-dark;
     font-weight: $semibold;
   }
 
   p {
-    font-size: $sm;
+    font-size: $text-sm;
     color: $black-main;
   }
 }

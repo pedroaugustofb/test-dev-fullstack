@@ -15,21 +15,21 @@
     font-size: $text-xs;
 
     @media (min-width: $md) {
-      font-size: $sm;
+      font-size: $text-sm;
     }
   }
 
   div {
     display: none;
     span {
-      font-size: $sm;
+      font-size: $text-sm;
     }
     @media (min-width: $md) {
       display: block;
     }
     a {
       font-weight: bold;
-      font-size: $sm;
+      font-size: $text-sm;
 
       &:hover {
         text-decoration: underline;

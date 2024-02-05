@@ -9,8 +9,6 @@ export default function CategoryCard({ category }: { category: Category }) {
   };
 
   const divID = `category-card-${category.id}`;
-  const element = document.getElementById(divID);
-  if (element) element.style.backgroundColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 
   return (
     <div id={divID} className="category-card-container" onClick={handleClick}>

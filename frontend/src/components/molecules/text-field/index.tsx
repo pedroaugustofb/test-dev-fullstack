@@ -5,19 +5,29 @@ import { Eye, EyeOff, X } from "lucide-react";
 interface TextFieldProps {
   id: string;
   label: string;
-  register: any;
+  register?: any;
   type: string;
   placeholder: string;
-  error: string | undefined;
+  error?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  children?: React.ReactNode;
 }
 
 export default function TextField(props: TextFieldProps) {
   const [showPassword, setShowPassword] = useState(false);
   return (
     <div className="text-field-container">
-      <label htmlFor={props.id}>{props.label}</label>
+      <label className="label-text-field" htmlFor={props.id}>
+        {props.label} {props.children}
+      </label>
       <div className="input-field-container">
-        <input type={props.type === "password" && showPassword ? "text" : props.type} {...props.register} id={props.id} placeholder={props.placeholder} />
+        <input
+          type={props.type === "password" && showPassword ? "text" : props.type}
+          {...props.register}
+          id={props.id}
+          placeholder={props.placeholder}
+          onChange={props.onChange}
+        />
         {props.type === "password" && (
           <button
             onClick={(e) => {
