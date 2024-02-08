@@ -1,0 +1,44 @@
+@import "../../../sass/variables";
+
+.products-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: $space-y-2;
+  padding: $space-y-4;
+
+  @media (min-width: $md) {
+    padding: $space-y-2;
+  }
+
+  h1 {
+    font-size: $text-xl;
+    font-weight: $semibold;
+  }
+}
+
+.actions-area {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  gap: $space-2;
+
+  @media (max-width: $md) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.create-product-button {
+  display: flex;
+  align-items: center;
+  gap: $space-x-2;
+  max-height: 45px;
+  padding: $space-2 $space-4;
+  white-space: nowrap;
+}
+
+.overflow-scroll-table {
+  width: 100%;
+  overflow-x: auto;
+}

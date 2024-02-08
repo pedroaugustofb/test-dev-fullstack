@@ -1,8 +1,9 @@
-import { ReactNode, createContext, useContext, useState } from "react";
+import { ReactNode, createContext, useContext } from "react";
 import User from "../entities/user/User";
 import api from "../api";
 import Cookies from "js-cookie";
 import base from "../api/base.api";
+import useSessionStorage from "../hooks/storage/useSessionStorage";
 
 export type AuthContent = {
   isAuthenticated: boolean;
@@ -16,8 +17,8 @@ export const AuthContext = createContext({} as AuthContent);
 export const useAuth = () => useContext(AuthContext);
 
 export function AuthProvider({ children }: { children: JSX.Element | ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
-  const isAuthenticated = user !== null;
+  const [user, setUser] = useSessionStorage<User | null>({ key: "test-diogofpina-user", initialValue: null });
+  const isAuthenticated = !!user;
 
   const login = async (email: string, password: string): Promise<void> => {
     try {
@@ -25,7 +26,7 @@ export function AuthProvider({ children }: { children: JSX.Element | ReactNode }
 
       if (!response || response.status !== 200) throw new Error("Login failed");
 
-      const { user, token } = response.data;
+      const { token, user } = response.data;
 
       Cookies.set("test-diogojpina-token", token, { expires: 1 });
 
@@ -45,6 +46,7 @@ export function AuthProvider({ children }: { children: JSX.Element | ReactNode }
       await setUser(null);
     } catch (error) {
       console.error(error);
+      throw error;
     }
   };
 

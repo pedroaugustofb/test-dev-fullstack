@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import Category from "../../entities/products/Category";
+import api from "../../api";
 
 interface useFetchRandomProductsReturnType {
   categories: Category[];
@@ -16,20 +17,11 @@ const useFetchCategories = () => {
 
   const fetch = useCallback(async () => {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await api.categories.getCategories();
 
-      // todo: retirar mock
-      const category: Category = {
-        id: "1",
-        name: "Categoria 1",
-        parent: {
-          id: "2",
-          name: "Categoria 2",
-          parent: null,
-        },
-      };
+      if (response.status !== 200) throw new Error("Error fetching categories");
 
-      setData({ categories: [category], loading: false, error: null });
+      setData({ categories: response.data.categories, loading: false, error: null });
     } catch (error) {
       setData({ categories: [], loading: false, error });
     }

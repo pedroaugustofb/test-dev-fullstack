@@ -8,7 +8,6 @@ function App() {
   return (
     <AuthProvider>
       <ToastContainer />
-
       <Router />
     </AuthProvider>
   );

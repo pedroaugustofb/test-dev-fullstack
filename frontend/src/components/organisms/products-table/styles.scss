@@ -1,0 +1,109 @@
+@import "../../../sass/variables";
+
+.pointer {
+  cursor: pointer;
+  font-weight: $semibold;
+}
+
+.actions-td-area {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  .icon-sm {
+    height: 16px;
+    width: 16px;
+
+    @media (max-width: $md) {
+      height: 14px;
+      width: 14px;
+    }
+  }
+
+  label {
+    cursor: pointer;
+    @media (max-width: $md) {
+      display: none;
+    }
+  }
+}
+
+table,
+th,
+td {
+  border: 1px solid $white-dark;
+}
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: $space-y-4;
+
+  @media (max-width: $md) {
+    font-size: $text-sm;
+    margin: $space-y-4;
+  }
+
+  thead {
+    tr {
+      th {
+        width: 20%;
+        padding: $space-2;
+        font-weight: $semibold;
+        text-align: left;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        padding: $space-2;
+        @media (max-width: $md) {
+          padding: $space-1;
+        }
+      }
+    }
+  }
+}
+
+.actions-column {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+}
+.pagination-area {
+  display: flex;
+  align-items: center;
+  padding: $space-3 $space-4;
+  width: 100%;
+
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: $space-4;
+    font-weight: $semibold;
+    text-align: center;
+    font-size: $text-sm;
+  }
+
+  button {
+    padding: $space-2 $space-4;
+    background-color: $primary-main;
+    border-radius: 7px;
+    border: 1px solid $white-main;
+    color: $white-light;
+    font-weight: $semibold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: fit-content;
+    &:hover {
+      background-color: $primary-dark;
+      color: $white-main;
+    }
+
+    @media (max-width: $md) {
+      font-size: $text-sm;
+    }
+  }
+}

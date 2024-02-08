@@ -1,7 +1,7 @@
 import Category from "./Category";
 
 type Product = {
-  id: string;
+  readonly id: string;
   categories: Category[];
   name: string;
   qty: number;

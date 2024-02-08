@@ -1,16 +1,16 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { CategoryRepository } from './infra/database/category.repository';
+import { CategoriesRepository } from './infra/database/categories.repository';
 import { CreateCategoryDto } from './dtos/create-category.dto';
 
 @Injectable()
 export class CategoriesService {
   private logger = new Logger();
 
-  constructor(private readonly categoriesRepository: CategoryRepository) {}
+  constructor(private readonly categoriesRepository: CategoriesRepository) {}
 
   async getCategories() {
     try {
-      return await this.categoriesRepository.find();
+      return await this.categoriesRepository.find({ relations: ['parent'] });
     } catch (error) {
       throw error;
     }

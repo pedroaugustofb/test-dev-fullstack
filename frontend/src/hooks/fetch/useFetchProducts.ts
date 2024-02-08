@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import Product from "../../entities/products/Product";
+import api from "../../api";
 
 interface useFetchRandomProductsReturnType {
   products: Product[];
@@ -7,48 +8,37 @@ interface useFetchRandomProductsReturnType {
   error: any;
 }
 
-const useFetchCategories = (category: string) => {
+const useFetchProducts = (category?: string) => {
   const [data, setData] = useState<useFetchRandomProductsReturnType>({
     products: [],
     loading: true,
     error: null,
   });
 
+  const setProducts = (products: Product[]) => setData({ ...data, products });
+
   const fetch = useCallback(async () => {
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await api.products.getProducts(category);
 
-      // todo: retirar mock
-      const product: Product = {
-        id: "1",
-        name: "Produto 1",
-        price: 100,
-        qty: 10,
-        photo: "https://via.placeholder.com/150",
-        categories: [
-          {
-            id: "1",
-            name: "Categoria 1",
-            parent: {
-              id: "2",
-              name: "Categoria 2",
-              parent: null,
-            },
-          },
-        ],
-      };
+      if (!response || response.status !== 200) throw new Error("Error fetching products");
+      console.log(response);
+      const { products } = response.data;
 
-      setData({ products: [product], loading: false, error: null });
+      setData({ products: products, loading: false, error: null });
     } catch (error) {
       setData({ products: [], loading: false, error });
     }
-  }, []);
+  }, [category]);
 
   useEffect(() => {
     fetch();
   }, [fetch]);
 
-  return data;
+  return {
+    ...data,
+    setProducts,
+  };
 };
 
-export default useFetchCategories;
+export default useFetchProducts;

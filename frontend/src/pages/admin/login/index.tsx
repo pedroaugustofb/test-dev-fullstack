@@ -1,10 +1,17 @@
 import "./styles.scss";
-import LoginImg from "../../assets/imgs/login.jpg";
-import LoginForm from "../../components/forms/login";
-import Footer from "../../components/molecules/footer";
-import Logo from "../../components/molecules/logo";
+import LoginImg from "../../../assets/imgs/login.jpg";
+import LoginForm from "../../../components/forms/login";
+import Footer from "../../../components/molecules/footer";
+import Logo from "../../../components/molecules/logo";
+import { useAuth } from "../../../contexts/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
+  const { isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+
+  if (isAuthenticated) navigate("/admin/products");
+
   return (
     <main className="login-page-container">
       {/* Login Banner */}

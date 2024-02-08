@@ -2,13 +2,16 @@
 
 .product-card-container {
   width: 100%;
+  max-width: 328px;
   height: 260px;
   border: 1px solid $white-dark;
   border-radius: 0.25rem;
   padding: $space-4;
   cursor: pointer;
   transition: 0.3s;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
   &:hover {
-    box-shadow: 0 0 0 1px $primary-main;
+    border: 1px solid $primary-main;
   }
 }

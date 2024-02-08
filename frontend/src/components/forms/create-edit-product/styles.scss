@@ -1,0 +1,70 @@
+@import "../../../sass/variables";
+
+.back-button {
+  display: flex;
+  gap: $space-2;
+  padding: $space-y-2;
+  align-items: center;
+  font-size: $text-sm;
+  margin-bottom: $space-2;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.add-field {
+  display: flex;
+  gap: $space-4;
+  align-items: flex-end;
+
+  button {
+    white-space: nowrap;
+    height: 46px;
+  }
+}
+
+.page-title {
+  font-size: $text-lg;
+  font-weight: $semibold;
+}
+
+.categories-container-grid {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+}
+
+.categories-grid-form {
+  display: flex;
+  gap: $space-4;
+}
+
+.img-product {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.category-mini-card {
+  display: flex;
+  gap: $space-2;
+  align-items: center;
+  width: fit-content;
+  padding: $space-2 $space-3;
+  border-radius: 7px;
+  background-color: $white-light;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background-color: $white-main;
+  }
+}
+
+.img-submit-box {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+  align-items: flex-start;
+  justify-content: flex-start;
+}

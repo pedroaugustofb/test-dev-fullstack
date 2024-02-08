@@ -14,10 +14,24 @@
   }
 }
 
+.option {
+  display: flex;
+  flex-direction: column;
+  gap: $space-1;
+  width: 100%;
+
+  .label-text-field {
+    font-size: $text-sm;
+    font-weight: $semibold;
+    padding: $space-x-3;
+  }
+}
+
 .input-field-container {
   position: relative;
   width: 100%;
-  input {
+  input,
+  select {
     border: 1px solid $black-dark;
     border-radius: $space-1;
     width: 100%;

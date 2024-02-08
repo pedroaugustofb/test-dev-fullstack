@@ -1,0 +1,47 @@
+@import "../../../sass/variables.scss";
+
+.topbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $space-4;
+  @media (max-width: $md) {
+    gap: $space-2;
+  }
+  span {
+    font-weight: $semibold;
+
+    @media (max-width: $md) {
+      font-size: $text-xs;
+    }
+  }
+}
+
+.logged-text-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  @media (max-width: $md) {
+    font-size: $text-xs;
+    white-space: nowrap;
+  }
+  p {
+    @media (max-width: $md) {
+      display: none;
+    }
+  }
+}
+
+.logo-topbar {
+  font-size: $text-lg;
+
+  @media (max-width: $md) {
+    font-size: $text-sm;
+  }
+}
+
+.topbar-icon {
+  @media (max-width: $md) {
+    display: none;
+  }
+}

@@ -1,5 +1,5 @@
 type Category = {
-  id: string;
+  readonly id: string;
   parent: Category | null;
   name: string;
 };

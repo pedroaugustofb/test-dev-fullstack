@@ -34,7 +34,7 @@ export default function LoginForm() {
   const onSubmit: SubmitHandler<LoginFormFields> = async (data) => {
     try {
       await login(data.email, data.password);
-      navigate("/admin/dashboard");
+      navigate("/admin/products");
       toast.success("Logged in successfully", {
         autoClose: 2000,
       });

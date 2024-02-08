@@ -1,10 +1,15 @@
 @import "../../../sass/variables";
 
 .center-container {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: calc(100vh - 80px);
   display: grid;
   place-items: center;
+
+  @media (max-width: $md) {
+    height: calc(100vh - 60px);
+    padding: $space-x-4;
+  }
 }
 
 .loader-container {

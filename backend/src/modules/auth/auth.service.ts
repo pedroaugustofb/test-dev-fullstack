@@ -31,6 +31,9 @@ export class AuthService {
 
     this.logger.verbose(`user logged in > ${user.email}`);
 
-    return { ...user, token };
+    return {
+      user,
+      token,
+    };
   }
 }

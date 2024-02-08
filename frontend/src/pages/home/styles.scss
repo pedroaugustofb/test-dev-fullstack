@@ -13,6 +13,11 @@
   }
 }
 
+.pointer {
+  cursor: pointer;
+  font-weight: $semibold;
+}
+
 .caregories-container {
   display: grid;
   gap: $space-4;
